@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 
 import { auth } from "@/lib/auth";
 
-import { SignOutButton } from "./components/sing-out-button";
+import DoctorsPage from "../doctors/page";
 
 const DashboardPage = async () => {
   const session = await auth.api.getSession({
@@ -17,10 +17,7 @@ const DashboardPage = async () => {
   }
   return (
     <div>
-      <h1>Dashboard</h1>
-      <h1>{session?.user?.name}</h1>
-      <h1>{session?.user?.email}</h1>
-      <SignOutButton />
+      <DoctorsPage />
     </div>
   );
 };
